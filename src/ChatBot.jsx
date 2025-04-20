@@ -14,7 +14,7 @@ const ChatBot = () => {
     setInput('');
 
     try {
-      const res = await axios.post('http://localhost:5000/chat', { message: input });
+      const res = await axios.post('https://gemini-chatbot-server-production.up.railway.app/chat', { message: input });
       const botReply = { sender: 'bot', text: res.data.reply };
       setMessages((prev) => [...prev, botReply]);
     } catch {
